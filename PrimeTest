@@ -1,0 +1,31 @@
+import java.util.*;
+public class primetest {
+	public static void main(String[] args){
+		Scanner console=new Scanner(System.in);
+		int a=prime(console);
+		if(a==0) {
+			System.out.println("Prime. ");
+		} else {
+			System.out.println("Not Prime.");
+		}
+	}
+	
+	public static int  prime(Scanner console){
+		System.out.print("Bir sayı giriniz.");
+		int x=console.nextInt();
+		int test=0;
+		if(x!=1 && x>0) {
+			for(int i=2;i<=x-1;i++) {
+				if(x%i==0) {
+					test=test+1;
+				} else {
+					test=test;
+				}
+			}
+			return test;
+		}
+		else {
+			return test+1;
+		}
+	}
+}
