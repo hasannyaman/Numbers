@@ -1,0 +1,31 @@
+import java.util.*;
+public class numbertest3 {
+	public static void main(String []args) {
+		Scanner console=new Scanner(System.in);
+		System.out.println("Amicable numbers are two different numbers  so related that the sum of the proper divisors of each is equal the other number.");
+		System.out.print("Write first number: ");
+		int input1=console.nextInt();
+		System.out.print("Write second number: ");
+		int input2=console.nextInt();
+		amicable_numbers(input1,input2);
+	}
+	public static void amicable_numbers(int input1, int input2) {
+		int sum1=0;
+		for(int i=1;i<input1;i++) {
+			if(input1%i==0) {
+				sum1=sum1+i;
+			}
+		}
+		int sum2=0;
+		for(int i=1;i<input2;i++) {
+			if(input2%i==0){
+				sum2=sum2+i;
+			}
+		}
+		if(sum1==input2 && sum2==input1) {
+			System.out.println(input1+" and "+input2+" are an amicable numbers.");
+		} else {
+			System.out.println(input1+" and "+input2+" are not an amicable numbers.");
+		}
+	}
+}
