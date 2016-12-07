@@ -1,0 +1,40 @@
+import java.util.*;
+public class primetest3 {
+	public static void main(String [] args){
+		Scanner console=new Scanner(System.in);
+		System.out.println("This program writes prime numbers between 2 numbers which you write.");
+		System.out.print("Write first number: ");
+		int x=console.nextInt();
+		System.out.print("Write second number: ");
+		int y=console.nextInt();
+		System.out.print("Prime numbers between "+x+" and "+y+" : ");
+		primenumbers(x,y);
+	}
+	public static void primenumbers(int x, int y) {
+		if(x!=y) {
+			for(int i=Math.min(x, y);i<Math.max(x, y);i++) {
+				if(isPrime(i)) {
+					System.out.print(i+" ");
+				}
+			}
+		} else if(x==y) {
+			if(isPrime(x)) {
+				System.out.print(x);
+			} else  {
+				System.out.print("There are no prime numbers.");
+			}
+		} 
+	}
+	public static boolean isPrime(int i) {
+		boolean test=true;
+		if(i==1 || i<=0) {
+			return false;
+		}
+		for(int j=2;j<i;j++) {
+			if(i%j==0) {
+				test=false;
+			}
+		}
+		return test;
+	}
+}
