@@ -1,0 +1,37 @@
+import java.util.*;
+public class primetest2 {
+	public static void main(String[] args) {
+		Scanner console=new Scanner(System.in);
+		System.out.println("Welcome to Twin Primes Test Program!");
+		System.out.print("Write first number: ");
+		int x=console.nextInt();
+		System.out.print("Write second number: ");
+		int y=console.nextInt();
+		twinPrime(x, y);
+	}
+	public static void twinPrime(int x, int y) {
+		int test1=0;
+		for(int i=2; i<=x-1; i++) {
+			if(x%i==0) {
+				test1=test1+1;
+			}
+			else {
+				test1=test1;
+			}
+		}
+		int test2=0;
+		for(int i=2; i<=y-1; i++) {
+			if(y%i==0) {
+				test2=test2+1;
+			}
+			else {
+				test2=test2;
+			}
+		}
+		if(test1==0 && test2==0) {
+			System.out.println(x+" and "+y+" are twins prime!");
+		} else {
+			System.out.println(x+" and "+y+" are not twins prime!");
+		}
+	}
+}
