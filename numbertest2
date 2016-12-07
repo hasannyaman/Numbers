@@ -1,0 +1,30 @@
+import java.util.*;
+public class numbertest2 {
+	public static void main(String[] args) {
+		Scanner console=new Scanner(System.in);
+		System.out.println("This program prints out all perfect numbers up to your input.");
+		System.out.print("Write a number: ");
+		int max=console.nextInt();
+		System.out.print("Perfect numbers up to "+max+":");
+		for(int input=1;input<=max;input++ ) {
+			if(perfect_number_test(input)==1) {
+				System.out.print(input+" ");
+			}
+		}
+	}
+	public static int perfect_number_test(int input) {
+		int sum=0;
+		for(int i=1;i<input;i++) {
+			if(input%i==0) {
+				sum=sum+i;
+			}
+		}
+		if(sum==input) {
+			//System.out.println(input+" is a perfect number!");
+			return 1;
+		} else {
+			//System.out.println(input+" is not a perfect number!");
+			return 0;
+		}	
+	}	
+}
